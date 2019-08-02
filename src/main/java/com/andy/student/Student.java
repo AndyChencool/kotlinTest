@@ -5,6 +5,8 @@ public class Student {
     String name;
     int english;
     int math;
+    //及格標準
+    static int pass = 60;
 
     public Student(String name, int english, int math) {
         this.name = name;
@@ -25,7 +27,8 @@ public class Student {
 
     public void print(){
         int average = getAverage();
-
+        System.out.println(name + "\t" + english + "\t" + math +
+                "\t" + getAverage() + "\t" + (getAverage() >= pass ? "PASS":"FAILED"));
         char grading = 'F';
 //        if (average >= 90 && average <= 100){
 //            grading = 'A';
@@ -36,7 +39,6 @@ public class Student {
 //        }else if(average >= 60 && average <= 69){
 //            grading = 'D';
 //        }
-
         switch (average/10) {
             case 10:
             case  9:
@@ -56,9 +58,9 @@ public class Student {
 
         }
 
-        System.out.println(name + "\t" + english + "\t" + math +
-                "\t" + getAverage() + "\t" + (getAverage() >= 60 ? "PASS":"FAILED")
-                + "\t" + grading  );
+//        System.out.println(name + "\t" + english + "\t" + math +
+//                "\t" + getAverage() + "\t" + (getAverage() >= pass ? "PASS":"FAILED")
+//                + "\t" + grading  );
 //        if (getAverage() >= 60) {
 //            System.out.println("\tPASS");
 //        }else{
